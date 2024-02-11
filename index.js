@@ -24,13 +24,18 @@ DBConnection.then(async () => {
     console.log(reason);
     process.abort();
   });
-  wpClient.initialize().then(() => {
-    console.log("WHATSAPP IS CONNECTED");
-    whatsappSession = wpClient;
-    app.listen(PORT, () => {
-      console.log(`Server is running on PORT ${PORT}`);
+  wpClient
+    .initialize()
+    .then(() => {
+      console.log("WHATSAPP IS CONNECTED");
+      whatsappSession = wpClient;
+      app.listen(PORT, () => {
+        console.log(`Server is running on PORT ${PORT}`);
+      });
+    })
+    .catch((err) => {
+      console.log("WHATSAPP CONNECTION ERROR");
     });
-  });
 }).catch((err) => {
   console.log("DB ERROR", err.message);
 });
