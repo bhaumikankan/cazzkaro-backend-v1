@@ -42,8 +42,12 @@ const generateWhatsappSession = async (whatsappSession = null) => {
   });
 
   client.on("qr", (qr) => {
-    console.log("QR RECEIVED", qr);
-    qrcode.generate(qr, { small: true });
+    console.log("QR RECEIVED\n", qr);
+
+    console.log(
+      "VIEW QR=====>>>>>",
+      `https://public-api.qr-code-generator.com/v1/create/free?qr_code_text=${qr}`
+    );
   });
 
   // client.on("ready", async () => {
