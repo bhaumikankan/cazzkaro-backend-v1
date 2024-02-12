@@ -30,11 +30,11 @@ DBConnection.then(async () => {
       console.log("WHATSAPP IS CONNECTED");
       whatsappSession = wpClient;
       app.listen(PORT, () => {
-        console.log(`Server is running on PORT ${PORT}`);
+        console.log(`Server is running `);
       });
     })
     .catch((err) => {
-      console.log("WHATSAPP CONNECTION ERROR");
+      console.log("WHATSAPP CONNECTION ERROR", err.message);
     });
 }).catch((err) => {
   console.log("DB ERROR", err.message);
