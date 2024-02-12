@@ -3,6 +3,8 @@ const { PostService } = require("../service");
 module.exports = class PostController {
   static async createPost(req, res, next) {
     try {
+      const { user } = req;
+      req.body.owner = user?._id;
       const post = await PostService.createPost(req.body);
       res.apiResponse(true, "Post created successfully", post);
     } catch (err) {

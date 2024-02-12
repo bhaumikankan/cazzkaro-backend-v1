@@ -6,7 +6,7 @@ const AddressSchema = new Schema({
   country: { type: String, required: true },
   state: { type: String, required: true },
   pin: { type: String, regex: /^\d{6}$/, required: true },
-  lankmark: { type: String, required: true },
+  landmark: { type: String, required: true },
   area: { type: String, require: false },
 });
 

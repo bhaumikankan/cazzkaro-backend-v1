@@ -29,13 +29,16 @@ DBConnection.then(async () => {
     .then(() => {
       console.log("WHATSAPP IS CONNECTED");
       whatsappSession = wpClient;
-      app.listen(PORT, () => {
-        console.log(`Server is running `);
-      });
+      // app.listen(PORT, () => {
+      //   console.log(`Server is running `);
+      // });
     })
     .catch((err) => {
       console.log("WHATSAPP CONNECTION ERROR", err.message);
     });
+  app.listen(PORT, () => {
+    console.log(`Server is running `);
+  });
 }).catch((err) => {
   console.log("DB ERROR", err.message);
 });
@@ -45,7 +48,6 @@ app.use((req, res, next) => {
   req.whatsappSession = whatsappSession;
   next();
 });
-
 app.use(ApiResponse);
 
 app.use("/api/v1", routes);

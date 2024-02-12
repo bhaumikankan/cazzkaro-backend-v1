@@ -7,6 +7,7 @@ module.exports = class TokenService {
     return token;
   }
   static decodeToken(token) {
+    if (!token) throw new Error("Invalid Token");
     const decoded = jwt.verify(token, SECRET_TEXT);
     return decoded;
   }
