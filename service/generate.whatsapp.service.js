@@ -20,7 +20,6 @@ const generateWhatsappSession = async (whatsappSession = null) => {
     puppeteer: {
       headless: false,
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
-      executablePath: `${process.env.PUPPETEER_CACHE_DIR} ${process.env.XDG_CACHE_HOME}`,
     },
     // authStrategy: new RemoteAuth({
     //   store: whatsappStore,
