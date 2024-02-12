@@ -4,6 +4,7 @@ const modulesSample = require("../../config/module.sample");
 // router.use("/auth", authRoute);
 
 modulesSample.forEach((module) => {
+  console.log(module.path);
   router.use(module.path, module.routes);
 });
 
