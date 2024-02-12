@@ -11,4 +11,8 @@ router.use("*", (req, res) => {
   res.status(404).json({ message: "Route not found" });
 });
 
+router.use("/", (req, res) => {
+  res.status(200).json({ message: "Hi its cazzkaro" });
+});
+
 module.exports = router;
