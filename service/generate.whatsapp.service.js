@@ -42,7 +42,7 @@ const generateWhatsappSession = async (whatsappSession = null) => {
   });
 
   client.on("qr", (qr) => {
-    console.log("QR RECEIVED\n", qr);
+    //console.log("QR RECEIVED\n", qr);
 
     console.log(
       "VIEW QR=====>>>>>",
