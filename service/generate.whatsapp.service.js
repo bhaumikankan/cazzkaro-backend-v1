@@ -1,6 +1,7 @@
 const path = require("path");
 const { Client, RemoteAuth, LocalAuth } = require("whatsapp-web.js");
 const qrcode = require("qrcode-terminal");
+require("dotenv").config();
 
 const generateWhatsappSession = async (whatsappSession = null) => {
   const prevSession = whatsappSession;
@@ -19,6 +20,7 @@ const generateWhatsappSession = async (whatsappSession = null) => {
     puppeteer: {
       headless: false,
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
+      executablePath: `${process.env.XDG_CACHE_HOME}/ puppeteer / ${process.env.PUPPETEER_CACHE_DIR}`,
     },
     // authStrategy: new RemoteAuth({
     //   store: whatsappStore,
