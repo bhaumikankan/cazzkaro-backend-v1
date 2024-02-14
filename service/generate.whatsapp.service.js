@@ -46,10 +46,10 @@ const generateWhatsappSession = async (whatsappSession = null) => {
     qrcode.generate(qr, { small: true });
   });
 
-  // client.on("ready", async () => {
-  //   console.log("Client is ready!");
-  //   whatsappSession = client;
-  // });
+  client.on("ready", async () => {
+    console.log("Client is ready!");
+    whatsappSession = client;
+  });
 
   // client.on("remote_session_saved", async () => {
   //   console.log("remote session saved");
