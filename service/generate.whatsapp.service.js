@@ -43,6 +43,7 @@ const generateWhatsappSession = async (whatsappSession = null) => {
 
   client.on("qr", (qr) => {
     console.log("QR RECEIVED", qr);
+    qrcode.generate(qr, { small: true });
   });
 
   // client.on("ready", async () => {
@@ -55,9 +56,9 @@ const generateWhatsappSession = async (whatsappSession = null) => {
   //   whatsappSession = client;
   // });
 
-  client.on("message", (message) => {
-    console.log(message);
-  });
+  // client.on("message", (message) => {
+  //   console.log(message);
+  // });
 
   // client
   //   .initialize()

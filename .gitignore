@@ -1,3 +1,4 @@
 node_modules
 whatsapp-auth
 .env
+.wwebjs_cache

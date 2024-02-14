@@ -5,6 +5,7 @@ const { ApiResponse } = require("./utils/apiResponse");
 const routes = require("./routes/v1");
 const { errorConverter, errorHandler } = require("./utils/error");
 const { GenerateWhatsappSessionService } = require("./service");
+const { requestDetails } = require("./utils/requestDetails");
 require("dotenv").config();
 const PORT = process.env.PORT || 8080;
 
@@ -49,6 +50,8 @@ app.use((req, res, next) => {
   next();
 });
 app.use(ApiResponse);
+
+app.use(requestDetails);
 
 app.use("/api/v1", routes);
 
