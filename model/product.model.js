@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose");
 const { LocationSchema, AddressSchema } = require("./subSchema");
 const { ObjectId } = Schema.Types;
 
-const postSchema = new Schema(
+const productSchema = new Schema(
   {
     name: { type: String, required: true },
     description: { type: String, required: true },
@@ -13,9 +13,9 @@ const postSchema = new Schema(
     location: { type: LocationSchema },
     address: { type: AddressSchema, required: true },
   },
-  { timestamps: true, versionKey: false, collection: "Posts" }
+  { timestamps: true, versionKey: false, collection: "Product" }
 );
 
-postSchema.index({ location: "2dsphere" });
+productSchema.index({ location: "2dsphere" });
 
-module.exports = new model("Posts", postSchema);
+module.exports = new model("Product", productSchema);

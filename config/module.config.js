@@ -14,10 +14,10 @@ const MODULES = {
     routes: require("../routes/v1/user.route"),
     path: "/user",
   },
-  POST: {
-    name: "POST",
-    routes: require("../routes/v1/post.route"),
-    path: "/post",
+  PRODUCT: {
+    name: "PRODUCT",
+    routes: require("../routes/v1/product.route"),
+    path: "/product",
   },
   CATEGORY: {
     name: "CATEGORY",

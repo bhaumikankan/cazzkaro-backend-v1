@@ -20,26 +20,26 @@ let whatsappSession = null;
 
 DBConnection.then(async () => {
   console.log("DB CONNECTED");
-  const wpClient = await GenerateWhatsappSessionService(whatsappSession);
-  wpClient.on("disconnected", (reason) => {
-    console.log(reason);
-    process.abort();
-  });
-  wpClient
-    .initialize()
-    .then(() => {
-      console.log("WHATSAPP IS CONNECTED");
-      whatsappSession = wpClient;
-      app.listen(PORT, () => {
-        console.log(`Server is running `);
-      });
-    })
-    .catch((err) => {
-      console.log("WHATSAPP CONNECTION ERROR", err.message);
-    });
-  // app.listen(PORT, () => {
-  //   console.log(`Server is running `);
+  // const wpClient = await GenerateWhatsappSessionService(whatsappSession);
+  // wpClient.on("disconnected", (reason) => {
+  //   console.log(reason);
+  //   process.abort();
   // });
+  // wpClient
+  //   .initialize()
+  //   .then(() => {
+  //     console.log("WHATSAPP IS CONNECTED");
+  //     whatsappSession = wpClient;
+  //     app.listen(PORT, () => {
+  //       console.log(`Server is running `);
+  //     });
+  //   })
+  //   .catch((err) => {
+  //     console.log("WHATSAPP CONNECTION ERROR", err.message);
+  //   });
+  app.listen(PORT, () => {
+    console.log(`Server is running `);
+  });
 }).catch((err) => {
   console.log("DB ERROR", err.message);
 });
